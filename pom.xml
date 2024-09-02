@@ -10,7 +10,7 @@
     </parent>
     <groupId>com.biz.joy-pets-island</groupId>
     <artifactId>joy-pets-island</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>${revision}</version>
     <name>joy-pets-island</name>
     <description>joy-pets-island</description>
     <url/>
@@ -20,6 +20,7 @@
     <developers>
         <developer/>
     </developers>
+    <packaging>pom</packaging>
     <scm>
         <connection/>
         <developerConnection/>
@@ -28,6 +29,8 @@
     </scm>
     <properties>
         <java.version>22</java.version>
+        <revision>0.0.1</revision>
+        <spring-boot.version>3.3.3</spring-boot.version>
     </properties>
     <modules>
         <module>app</module>
@@ -36,21 +39,30 @@
     </modules>
     <dependencyManagement>
         <dependencies>
+
             <dependency>
                 <groupId>com.biz.joy-pets-island</groupId>
                 <artifactId>app</artifactId>
-                <version>0.0.1-SNAPSHOT</version>
+                <version>${revision}</version>
             </dependency>
             <dependency>
                 <groupId>com.biz.joy-pets-island</groupId>
                 <artifactId>common</artifactId>
-                <version>0.0.1-SNAPSHOT</version>
+                <version>${revision}</version>
             </dependency>
             <dependency>
                 <groupId>com.biz.joy-pets-island</groupId>
                 <artifactId>system</artifactId>
-                <version>0.0.1-SNAPSHOT</version>
+                <version>${revision}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
 </project>
